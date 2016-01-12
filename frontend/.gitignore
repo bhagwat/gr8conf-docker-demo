@@ -1,0 +1,9 @@
+Thumbs.db
+.DS_Store
+build/
+.idea
+*.iml
+*.ipr
+*.iws
+.project
+node_modules

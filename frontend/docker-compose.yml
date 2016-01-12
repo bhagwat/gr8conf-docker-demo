@@ -1,0 +1,7 @@
+frontend:
+    container_name: frontend
+    build: .
+    links:
+        - backend:backend
+    ports:
+        - "3000:3000"

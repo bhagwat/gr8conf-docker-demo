@@ -1,0 +1,19 @@
+nginx:
+    container_name: backendserver
+    build: ./nginx
+    links:
+        - backend
+    ports:
+        - "80:80"
+backend:
+    container_name: backend
+    build: ./dockerBuild
+    links:
+        - mongodb
+    environment:
+        "spring.data.mongodb.host": "mongodb"
+    ports:
+        - "8080:8080"
+mongodb:
+    container_name: mongodb
+    image: mongo

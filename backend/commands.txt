@@ -1,0 +1,21 @@
+
+curl http://$(docker-machine ip default):8080/todo
+
+curl -XPOST -H "Content-Type:application/json" http://$(docker-machine ip default):8080/todo -d '{ 
+  "done": false
+}'
+curl -XDELETE -H "Content-Type:application/json" http://$(docker-machine ip default):8080/todo -d '{ 
+  "done": false
+}'
+
+curl -XPOST -H "Content-Type:application/json" http://$(docker-machine ip default):8080/todo -d '{ 
+  "description" : "Dry run Gr8conf presentation", "done": false
+}'
+
+curl -XPOST -H "Content-Type:application/json" http://$(docker-machine ip default):8080/todo -d '{ 
+  "description" : "Call client at 4pm", "done": false
+}'
+
+curl -XPUT -H "Content-Type:application/json" http://$(docker-machine ip default):8080/todo/569546c6e4b056c5dfcdb45c -d '{ 
+  "description": "Fixed missed description"
+}'
