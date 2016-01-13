@@ -15,7 +15,7 @@ apply plugin: 'spring-boot'
 
 jar {
     baseName = 'backend-mongo-rest'
-    version =  '0.1.0'
+    version = '0.1.0'
 }
 
 repositories {
@@ -33,8 +33,8 @@ dependencies {
 }
 
 build.doLast {
-        copy {
-            from jar
-            into project.file("dockerBuild")
-        }
+    copy {
+        from jar
+        into project.file("dockerBuild")
     }
+}

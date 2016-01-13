@@ -1,0 +1,20 @@
+mongodb:
+    image: mongo
+backend:
+    image: bhagwatkumar/backend
+    links:
+        - mongodb
+    environment:
+        "spring.data.mongodb.host": "mongodb"
+        "logging.level.org.springframework.web": "DEBUG"
+    ports:
+        - "8080:8080"
+frontend:
+    image: bhagwatkumar/frontend
+    ports:
+        - "3000:3000"
+    links:
+        - backend
+    environment:
+        backendServerUrl: "http://backend:8080"
+    command: "node server.js"
