@@ -1,7 +1,8 @@
 frontend:
     container_name: frontend
     build: .
-    links:
-        - backend:backend
     ports:
         - "3000:3000"
+    environment:
+        backendServerUrl: "http://192.168.99.100:8080"
+    command: "node server.js"

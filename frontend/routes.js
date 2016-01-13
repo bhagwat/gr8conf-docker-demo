@@ -1,5 +1,5 @@
 var request = require('request');
-var backendServerUrl = 'http://backend:8080/todo';
+var backendServerUrl = (process.env.backendServerUrl || 'http://localhost:8080') + '/todo';
 
 module.exports.init = function (app) {
     app.get('/todoAction', function (req, res) {
@@ -22,10 +22,10 @@ module.exports.init = function (app) {
                 body: body,
                 json: true
             }, function (err, response, data) {
-              if(err){
-                console.log(err);
-              }
-              res.json({todo: !err ? data : [], err: err || ""});
+                if (err) {
+                    console.log(err);
+                }
+                res.json({todo: !err ? data : [], err: err || ""});
             }
         )
     });
@@ -38,10 +38,10 @@ module.exports.init = function (app) {
                 body: body,
                 json: true
             }, function (err, response, data) {
-              if(err){
-                console.log(err);
-              }
-              res.json({todo: !err ? data : [], err: err || ""});
+                if (err) {
+                    console.log(err);
+                }
+                res.json({todo: !err ? data : [], err: err || ""});
             }
         )
     })
