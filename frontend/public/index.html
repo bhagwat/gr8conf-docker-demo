@@ -38,12 +38,15 @@
                 <tbody>
                 <tr data-ng-repeat="todo in todos|filter:{done:false}">
                     <td>
-                        <input type="text" data-ng-model="todo.description" data-ng-change="update(todo)"/>
+                        <input type="text" data-ng-model="todo.description" 
+                        data-ng-change="update(todo)" style="width:370px;"/>
                     </td>
-                    <td><input type="checkbox" data-ng-model="todo.done" data-ng-change="update(todo)"/></td>
+                    <td><input type="checkbox" data-ng-model="todo.done" 
+                    data-ng-change="update(todo)"/></td>
                     <td>
-                        <a data-ng-click="delete(todo)"><span class="glyphicon glyphicon-remove"
-                                                              aria-hidden="true"></span></a>
+                        <a data-ng-click="delete(todo)">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </a>
                     </td>
                 </tr>
                 </tbody>
@@ -60,13 +63,17 @@
                 <tbody>
                 <tr data-ng-repeat="todo in todos|filter:{done:true}">
                     <td>
-                        <input type="text" data-ng-model="todo.description" data-ng-change="update(todo)"/>
+                        <input type="text" data-ng-model="todo.description"
+                         data-ng-change="update(todo)" style="width:370px;"/>
                     </td>
                     <td>
-                        <input type="checkbox" data-ng-model="todo.done" data-ng-change="update(todo)"/></td>
+                        <input type="checkbox" data-ng-model="todo.done"
+                         data-ng-change="update(todo)"/>
+                    </td>
                     <td>
-                        <a data-ng-click="delete(todo)"><span class="glyphicon glyphicon-remove"
-                                                              aria-hidden="true"></span></a>
+                        <a data-ng-click="delete(todo)">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </a>
                     </td>
                 </tr>
                 </tbody>
