@@ -18,8 +18,11 @@
             <form class="form-inline">
                 <div class="form-group">
                     <label class="sr-only" for="description">New TODO</label>
-                    <input type="text" class="form-control" id="description" data-ng-model="form.description"
-                           placeholder="What's your wish?" required style="width:370px;">
+                    <input type="text"
+                     class="form-control"
+                     id="description"
+                     data-ng-model="form.description"
+                     placeholder="What's your wish?" required style="width:370px;">
                 </div>
                 <a data-ng-click="addTodo(todo)"><span class="glyphicon glyphicon-plus"
                                                       aria-hidden="true"></span></a>
@@ -38,8 +41,10 @@
                 <tbody>
                 <tr data-ng-repeat="todo in todos|filter:{done:false}">
                     <td>
-                        <input type="text" data-ng-model="todo.description" 
-                        data-ng-change="update(todo)" style="width:370px;"/>
+                        <input type="text"
+                        data-ng-model="todo.description" 
+                        data-ng-change="update(todo)"
+                        style="width:370px;"/>
                     </td>
                     <td><input type="checkbox" data-ng-model="todo.done" 
                     data-ng-change="update(todo)"/></td>
@@ -63,8 +68,10 @@
                 <tbody>
                 <tr data-ng-repeat="todo in todos|filter:{done:true}">
                     <td>
-                        <input type="text" data-ng-model="todo.description"
-                         data-ng-change="update(todo)" style="width:370px;"/>
+                        <input type="text" 
+                        data-ng-model="todo.description"
+                        data-ng-change="update(todo)"
+                        style="width:370px;"/>
                     </td>
                     <td>
                         <input type="checkbox" data-ng-model="todo.done"

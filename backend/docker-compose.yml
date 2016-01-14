@@ -1,3 +1,5 @@
+mongodb:
+    image: mongo
 backend:
     build: ./dockerBuild
     links:
@@ -7,6 +9,3 @@ backend:
         "logging.level.org.springframework.web": "DEBUG"
     ports:
         - "8080:8080"
-mongodb:
-    container_name: mongodb
-    image: mongo
